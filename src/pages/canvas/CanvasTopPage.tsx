@@ -4,19 +4,17 @@ import {
   Route,
   useRouteMatch,
 } from "react-router-dom";
-import DetailPage from "./DetailPage";
-import ListPage from "./ListPage";
+import CanvasPage from "./CanvasPage";
 
-const SubTopPage = () => {
+const CanvasTopPage = () => {
   const match = useRouteMatch();
   return (
     <Router>
       <Layout style={{ padding: 10, backgroundColor: "#ccffff" }}>
-        <Route exact path={match.path} component={ListPage}></Route>
-        <Route path={`${match.path}/:id`} component={DetailPage}></Route>
+        <Route exact path={match.path} component={CanvasPage}></Route>
       </Layout>
     </Router>
   );
 };
 
-export default SubTopPage;
+export default CanvasTopPage;
