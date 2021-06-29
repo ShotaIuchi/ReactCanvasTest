@@ -1,0 +1,16 @@
+version: "3"
+services:
+  image:
+    build: ./image
+    ports:
+      - "9900:80"
+    volumes:
+      - type: bind
+        source: ./image/data
+        target: /usr/share/nginx/html
+        read_only: true
+      - type: bind
+        source: ./image/default.conf
+        target: /etc/nginx/conf.d/default.conf
+        read_only: true
+
